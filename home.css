@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background: black;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo {
+    font-size: 18px;
+    background: linear-gradient(45deg, rgb(9, 117, 117), cyan);
+    color: black;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 800;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+.logo:hover {
+    background: black;
+    color: cyan;
+}
+.navbar a {
+    display: inline-block;
+    font-size: 1em;
+    color: cyan;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 35px;
+    transition: 0.3s;
+    background: black;
+    padding: 15px;
+    border-radius: 20px;
+    opacity: 0;
+    animation: slideTop 0.5s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+.navbar a:hover,
+.navbar a.active {
+    background: linear-gradient(45deg, rgb(9, 117, 117), cyan);
+    color: black;
+}
+.content {
+    font-weight: 900;
+    font-size: 25px;
+    color: #fff;
+    padding-top: 200px;
+    padding-right: 500px;
+    padding-left: 10%;
+}
+span {
+    -webkit-text-stroke: 0.5px cyan;
+    color: black;
+}
+.content h3 {
+    opacity: 0;
+    animation: slidetop 5s ease forwards;
+}
+.socialmedia a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid cyan;
+    border-radius: 20%;
+    font-size: 20px;
+    color: cyan;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: 0.5s ease;
+}
+.socialmedia :hover {
+    background: cyan;
+    color: black;
+    box-shadow: 0 0 20px cyan;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: cyan;
+    border-radius: 40px;
+    box-shadow: 0 0 10px cyan;
+    font-size: 16px;
+    color: black;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Keyframes for animation */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slidetop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries for Mobile */
+@media only screen and (max-width: 768px) {
+    /* Adjust header padding for mobile */
+    .header {
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Logo font size for smaller screens */
+    .logo {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    /* Navbar links stack vertically on mobile */
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    .navbar a {
+        margin-left: 0;
+        margin-bottom: 10px;
+        font-size: 1em;
+        padding: 10px;
+        text-align: left;
+    }
+
+    /* Content adjustments */
+    .content {
+        font-size: 20px;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 150px;
+    }
+
+    /* Social media icons */
+    .socialmedia a {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        margin: 15px 10px;
+    }
+
+    /* Adjust the button size and padding */
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* Make content title responsive */
+    .content h3 {
+        font-size: 24px;
+        padding: 0 10%;
+    }
+
+    /* Mobile form adjustments */
+    .form-container {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    /* Navbar links visibility */
+    .navbar a {
+        font-size: 18px;
+        margin-left: 0;
+    }
+}
